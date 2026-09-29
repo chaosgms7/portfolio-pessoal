@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>chaos — Tiago | Portfólio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#1a1a1a;--fg:#ececec;--mute:#9a9a9a;--line:#333;--acc:#ffc400;--card:#232323;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="claro"]{--bg:#ffffff;--fg:#111111;--mute:#5c5c5c;--line:#e2e2e2;--acc:#b37a00;--card:#f4f4f2}
+:root[data-theme="escuro"]{--bg:#1a1a1a;--fg:#ececec;--mute:#9a9a9a;--line:#333;--acc:#ffc400;--card:#232323}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;transition:background .3s,color .3s}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--acc);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;background:var(--acc);color:#000;padding:.5rem 1rem;z-index:9}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.2rem;padding-bottom:1.2rem;flex-wrap:wrap}
+.logo{font-weight:800;text-decoration:none;font-size:1.15rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--mute);font-weight:600}
+nav a:hover,nav a[aria-current]{color:var(--fg);box-shadow:0 2px 0 var(--acc)}
+.theme{display:flex;gap:.5rem}
+.theme button{width:1.5rem;height:1.5rem;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
+.theme button[aria-pressed="true"]{border-color:var(--fg)}
+.hero{padding:clamp(4rem,12vw,9rem) 0 4rem}
+.hello{color:var(--acc);font-weight:600;margin:0 0 1rem}
+h1{font-size:clamp(3.2rem,11vw,8rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin:0 0 2rem}
+.hero p{max-width:38rem;font-size:1.2rem;color:var(--mute);margin:0 0 1rem}
+.hero p a{color:var(--fg);text-decoration-color:var(--acc);text-underline-offset:4px}
+h2{font-size:1.6rem;letter-spacing:-.02em;margin:0 0 2rem}
+section{padding:3rem 0}
+.list{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem}
+.item{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;align-items:center;background:var(--card);padding:1rem;border-radius:.75rem}
+.thumb{aspect-ratio:4/3;border-radius:.5rem;background:linear-gradient(135deg,var(--acc),var(--line))}
+.item:nth-child(2) .thumb{background:linear-gradient(45deg,var(--line),var(--acc))}
+.item:nth-child(3) .thumb{background:repeating-linear-gradient(45deg,var(--acc) 0 8px,var(--line) 8px 16px)}
+.item h3{margin:0 0 .3rem;font-size:1.25rem}
+.item h3 a{text-decoration:none}.item h3 a:hover{text-decoration:underline;text-decoration-color:var(--acc);text-underline-offset:4px}
+.item p{margin:0;color:var(--mute)}
+.tags{margin-top:.5rem;font-size:.9rem;color:var(--acc);font-weight:600}
+.more{display:inline-block;margin-top:1.5rem;font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0}
+.skills li{border:1px solid var(--line);padding:.35rem .9rem;border-radius:2rem;font-weight:600}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding:2.5rem 0 3rem;color:var(--mute)}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem}
+footer strong{display:block;color:var(--fg);margin-bottom:.4rem}
+footer a{display:block}
+@media (max-width:34rem){.item{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Ir para o conteúdo</a>
+<header>
+ <div class="wrap">
+  <a class="logo" href="#main">chaos</a>
+  <nav aria-label="Principal"><ul>
+   <li><a href="#main" aria-current="page">Início</a></li>
+   <li><a href="#projetos">Projetos</a></li>
+   <li><a href="#sobre">Sobre</a></li>
+   <li><a href="#contato">Contato</a></li>
+  </ul></nav>
+  <div class="theme" role="group" aria-label="Tema de cores">
+   <button data-t="escuro" title="Preto e amarelo" style="background:#1a1a1a;box-shadow:inset -.6rem 0 0 #ffc400"></button>
+   <button data-t="claro" title="Branco e amarelo" style="background:#fff;box-shadow:inset -.6rem 0 0 #b37a00"></button>
+  </div>
+ </div>
+</header>
+
+<main id="main" class="wrap">
+ <div class="hero">
+  <p class="hello">Olá, eu sou Tiago</p>
+  <h1>Eu crio<br>[o que você faz].</h1>
+  <p>[Frase de apresentação: o que você faz e para quem.]</p>
+  <p>Também compartilho projetos no <a href="https://github.com/chaosgms7">GitHub</a>.</p>
+ </div>
+
+ <section id="projetos">
+  <h2>Projetos em destaque</h2>
+  <ul class="list">
+   <li class="item"><div class="thumb" role="img" aria-label="Imagem do projeto"></div><div>
+    <h3><a href="#">Nome do projeto 1</a></h3><p>Uma frase sobre o que é o projeto, o problema que resolveu e o seu papel.</p><div class="tags">Tecnologia A, Tecnologia B</div></div></li>
+   <li class="item"><div class="thumb" role="img" aria-label="Imagem do projeto"></div><div>
+    <h3><a href="#">Nome do projeto 2</a></h3><p>Uma frase sobre o que é o projeto, o problema que resolveu e o seu papel.</p><div class="tags">Tecnologia A, Tecnologia C</div></div></li>
+   <li class="item"><div class="thumb" role="img" aria-label="Imagem do projeto"></div><div>
+    <h3><a href="#">Nome do projeto 3</a></h3><p>Uma frase sobre o que é o projeto, o problema que resolveu e o seu papel.</p><div class="tags">Tecnologia B, Tecnologia D</div></div></li>
+  </ul>
+  <a class="more" href="#">Ver todos os projetos</a>
+ </section>
+
+ <section id="sobre">
+  <h2>Sobre mim</h2>
+  <p style="max-width:40rem;color:var(--mute)">Sou estudante de Ciência da Computação e desenvolvedor em formação, com experiência na criação de sites, landing pages e soluções digitais. Tenho conhecimentos em programação, desenvolvimento web, Python, C, Git/GitHub e ferramentas de inteligência artificial, além de interesse em automação e tecnologia. Busco transformar ideias em projetos funcionais, modernos e que realmente gerem valor para pessoas e negócios.</p>
+  <ul class="skills" aria-label="Habilidades">
+   <li>Desenvolvimento web</li><li>Python</li><li>C</li><li>Git e GitHub</li><li>Inteligência artificial</li><li>Automação</li>
+  </ul>
+ </section>
+</main>
+
+<footer id="contato">
+ <div class="wrap">
+  <div><strong>© 2026</strong>chaos (Tiago)</div>
+  <div><strong>Trabalho</strong>Estudante na UERN<br>Freelancer</div>
+  <div><strong>Redes</strong><a href="https://www.linkedin.com/in/tiago-teixeira-da-silva-28081a43a/">LinkedIn</a><a href="https://github.com/chaosgms7">GitHub</a><a href="https://instagram.com/chaosgms">Instagram</a><a href="https://wa.me/5584988061168">WhatsApp</a></div>
+  <div><strong>Contato</strong><a href="mailto:tiagotts2017@gmail.com">tiagotts2017@gmail.com</a></div>
+ </div>
+</footer>
+
+<script>
+(function(){
+ var root=document.documentElement,btns=document.querySelectorAll(".theme button");
+ function set(t){root.setAttribute("data-theme",t);btns.forEach(function(b){b.setAttribute("aria-pressed",b.dataset.t===t)})}
+ var saved=null;try{saved=localStorage.getItem("tema")}catch(e){}
+ if(saved)set(saved);else btns.forEach(function(b){b.setAttribute("aria-pressed","false")});
+ btns.forEach(function(b){b.addEventListener("click",function(){set(b.dataset.t);try{localStorage.setItem("tema",b.dataset.t)}catch(e){}})});
+})();
+</script>
+</body>
+</html>
