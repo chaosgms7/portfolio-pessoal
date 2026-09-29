@@ -1,0 +1,25 @@
+PORTFOLIO TIAGO - COMO ABRIR
+
+1) Extraia o ZIP inteiro (botao direito > Extrair tudo). Nao abra o index.html de dentro do ZIP.
+2) Mantenha as pastas juntas, exatamente assim:
+
+   Portfolio Tiago/
+   |-- index.html
+   |-- css/
+   |   |-- base.css
+   |   |-- layout.css
+   |   |-- components.css
+   |   `-- responsive.css
+   |-- js/
+   |   `-- theme.js
+   `-- assets/
+       `-- images/
+
+3) De dois cliques no index.html. NAO precisa de servidor: o projeto e HTML/CSS/JS puro
+   e funciona direto do arquivo.
+
+Se preferir um servidor local (opcional), abra o terminal na pasta e rode:
+   python -m http.server 5500
+e acesse http://localhost:5500
+
+Importante: nunca mova ou baixe o index.html sozinho; ele depende das pastas css/ e js/.

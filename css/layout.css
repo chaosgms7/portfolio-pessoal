@@ -1,0 +1,21 @@
+/* Layout: cabeçalho, navegação, seletor de tema, hero e rodapé */
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.2rem;padding-bottom:1.2rem;flex-wrap:wrap}
+.logo{font-weight:800;text-decoration:none;font-size:1.15rem}
+nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--mute);font-weight:600}
+nav a:hover,nav a[aria-current]{color:var(--fg);box-shadow:0 2px 0 var(--acc)}
+.theme{display:flex;gap:.5rem}
+.theme button{width:1.5rem;height:1.5rem;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
+.theme button[aria-pressed="true"]{border-color:var(--fg)}
+.theme button[data-t="escuro"]{background:#1a1a1a;box-shadow:inset -.6rem 0 0 #ffc400}
+.theme button[data-t="claro"]{background:#fff;box-shadow:inset -.6rem 0 0 #b37a00}
+.hero{padding:clamp(4rem,12vw,9rem) 0 4rem}
+.hello{color:var(--acc);font-weight:600;margin:0 0 1rem}
+h1{font-size:clamp(3.2rem,11vw,8rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin:0 0 2rem}
+.hero p{max-width:38rem;font-size:1.2rem;color:var(--mute);margin:0 0 1rem}
+.hero p a{color:var(--fg);text-decoration-color:var(--acc);text-underline-offset:4px}
+footer{border-top:1px solid var(--line);margin-top:3rem;padding:2.5rem 0 3rem;color:var(--mute)}
+footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem}
+footer strong{display:block;color:var(--fg);margin-bottom:.4rem}
+footer a{display:block}
