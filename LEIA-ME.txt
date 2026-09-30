@@ -1,25 +1,30 @@
-PORTFOLIO TIAGO - COMO ABRIR
+# Portfólio — chaos (Tiago)
 
-1) Extraia o ZIP inteiro (botao direito > Extrair tudo). Nao abra o index.html de dentro do ZIP.
-2) Mantenha as pastas juntas, exatamente assim:
+HTML + CSS + JavaScript, com React + Motion apenas nos cards de projetos (Flip Card do React Bits).
 
-   Portfolio Tiago/
-   |-- index.html
-   |-- css/
-   |   |-- base.css
-   |   |-- layout.css
-   |   |-- components.css
-   |   `-- responsive.css
-   |-- js/
-   |   `-- theme.js
-   `-- assets/
-       `-- images/
+## Como rodar (Windows)
+1. Instale o Node.js (versão LTS): https://nodejs.org
+2. Extraia o ZIP inteiro e dê dois cliques em `iniciar.bat`.
+   Na primeira vez ele instala as dependências e abre o site no navegador.
 
-3) De dois cliques no index.html. NAO precisa de servidor: o projeto e HTML/CSS/JS puro
-   e funciona direto do arquivo.
+Ou pelo terminal, dentro da pasta:
+    npm install
+    npm run dev
 
-Se preferir um servidor local (opcional), abra o terminal na pasta e rode:
-   python -m http.server 5500
-e acesse http://localhost:5500
+Não abra o `index.html` com dois cliques: os módulos do React não carregam a partir de um arquivo local.
 
-Importante: nunca mova ou baixe o index.html sozinho; ele depende das pastas css/ e js/.
+## Publicar
+    npm run build      gera a pasta dist/ (é ela que vai para a hospedagem)
+    npm run preview    testa o resultado do build
+
+## Estrutura
+    index.html                          estrutura da página
+    css/                                estilos (base, layout, components, responsive)
+    js/theme.js                         troca de tema claro/escuro
+    components/FlipCard/                Flip Card oficial do React Bits (não editado)
+    src/main.jsx                        monta os cards na seção Projetos
+    src/ProjectFlipCards.jsx            dados dos projetos (troque os textos aqui)
+    assets/images/                      imagens
+    package.json, vite.config.js        configuração do projeto
+
+Sem JavaScript, a seção Projetos mostra os cards originais que estão no HTML.

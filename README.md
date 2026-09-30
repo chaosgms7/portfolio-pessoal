@@ -1,23 +1,30 @@
 # Portfólio — chaos (Tiago)
 
-Site estático em HTML + CSS + JavaScript puro. Não precisa de instalação, build nem servidor.
+HTML + CSS + JavaScript, com React + Motion apenas nos cards de projetos (Flip Card do React Bits).
 
-## Como abrir
-1. Extraia o ZIP inteiro (não copie só o index.html).
-2. Dê dois cliques em `index.html`.
+## Como rodar (Windows)
+1. Instale o Node.js (versão LTS): https://nodejs.org
+2. Extraia o ZIP inteiro e dê dois cliques em `iniciar.bat`.
+   Na primeira vez ele instala as dependências e abre o site no navegador.
 
-## Servidor local (opcional)
-Dentro desta pasta:
-    python -m http.server 8000
-e abra http://localhost:8000
+Ou pelo terminal, dentro da pasta:
+    npm install
+    npm run dev
+
+Não abra o `index.html` com dois cliques: os módulos do React não carregam a partir de um arquivo local.
+
+## Publicar
+    npm run build      gera a pasta dist/ (é ela que vai para a hospedagem)
+    npm run preview    testa o resultado do build
 
 ## Estrutura
-    index.html            estrutura da página
-    css/base.css          variáveis de tema, reset, tipografia
-    css/layout.css        cabeçalho, navegação, hero, rodapé
-    css/components.css    projetos, tags, habilidades
-    css/responsive.css    media queries e movimento reduzido
-    js/theme.js           troca de tema claro/escuro
-    assets/images/        imagens (vazia por enquanto)
+    index.html                          estrutura da página
+    css/                                estilos (base, layout, components, responsive)
+    js/theme.js                         troca de tema claro/escuro
+    components/FlipCard/                Flip Card oficial do React Bits (não editado)
+    src/main.jsx                        monta os cards na seção Projetos
+    src/ProjectFlipCards.jsx            dados dos projetos (troque os textos aqui)
+    assets/images/                      imagens
+    package.json, vite.config.js        configuração do projeto
 
-Mantenha as pastas css/, js/ e assets/ ao lado do index.html.
+Sem JavaScript, a seção Projetos mostra os cards originais que estão no HTML.
