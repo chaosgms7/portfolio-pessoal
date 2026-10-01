@@ -1,0 +1,10 @@
+/* Responsivo e acessibilidade (movimento reduzido) */
+@media (max-width:34rem){.item{grid-template-columns:1fr}}
+@media (max-width:46rem){
+.menu-btn{display:inline-block}
+.site-header nav{position:absolute;top:100%;left:0;right:0;padding:.25rem 0 1rem;background:var(--bg);border-bottom:1px solid var(--line);opacity:0;visibility:hidden;transform:translateY(-.5rem);transition:opacity .25s ease,transform .25s ease,visibility 0s linear .25s}
+.site-header.menu-open nav{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.site-header nav ul{flex-direction:column;gap:0;max-width:62rem;margin:0 auto;padding:0 1.5rem}
+.site-header nav a{display:inline-block;padding:.65rem 0;font-size:1.05rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}:root.theme-anim *,:root.theme-anim *::before,:root.theme-anim *::after{transition:none!important}}

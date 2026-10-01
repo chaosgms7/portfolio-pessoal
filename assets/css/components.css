@@ -1,0 +1,29 @@
+/* Componentes: lista de projetos, cartões, tags e habilidades */
+.list{list-style:none;margin:0;padding:0;display:grid;gap:1.25rem}
+.item{display:grid;grid-template-columns:9rem 1fr;gap:1.5rem;align-items:center;background:var(--card);padding:1rem;border-radius:.75rem}
+.thumb{aspect-ratio:4/3;border-radius:.5rem;background:linear-gradient(135deg,var(--acc),var(--line))}
+.item:nth-child(2) .thumb{background:linear-gradient(45deg,var(--line),var(--acc))}
+.item:nth-child(3) .thumb{background:repeating-linear-gradient(45deg,var(--acc) 0 8px,var(--line) 8px 16px)}
+.item h3{margin:0 0 .3rem;font-size:1.25rem}
+.item h3 a{text-decoration:none}.item h3 a:hover{text-decoration:underline;text-decoration-color:var(--acc);text-underline-offset:4px}
+.item p{margin:0;color:var(--mute)}
+.tags{margin-top:.5rem;font-size:.9rem;color:var(--acc);font-weight:600}
+.more{display:inline-block;margin-top:1.5rem;font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:0}
+.skills li{border:1px solid var(--line);padding:.35rem .9rem;border-radius:2rem;font-weight:600}
+.about-text{max-width:40rem;color:var(--mute)}
+.services{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
+.service{background:var(--card);border:1px solid var(--line);border-radius:.75rem;padding:1.25rem;transition:border-color .3s}
+.service:hover{border-color:var(--acc)}
+.service-icon{display:block;font-size:2rem;line-height:1;margin-bottom:.75rem}
+.service h3{margin:0 0 .4rem;font-size:1.25rem}
+.service p{margin:0;color:var(--mute)}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;justify-items:center}
+.pf-front,.pf-back{height:100%;display:flex;flex-direction:column;gap:.75rem;padding:1rem;text-align:left}
+.pf-thumb{flex:1;min-height:0;border-radius:.5rem;background:linear-gradient(135deg,var(--acc),var(--line))}
+.pf-thumb--2{background:linear-gradient(45deg,var(--line),var(--acc))}
+.pf-thumb--3{background:repeating-linear-gradient(45deg,var(--acc) 0 8px,var(--line) 8px 16px)}
+.pf-front h3,.pf-back h3{margin:0 0 .3rem;font-size:1.25rem}
+.pf-back{justify-content:center}
+.pf-back p{margin:0;color:var(--mute)}
+.pf-tags{margin:.5rem 0 0;font-size:.9rem;color:var(--acc);font-weight:600}
