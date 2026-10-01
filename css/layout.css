@@ -1,15 +1,32 @@
 /* Layout: cabeçalho, navegação, seletor de tema, hero e rodapé */
-header{border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-top:1.2rem;padding-bottom:1.2rem;flex-wrap:wrap}
+/* Navbar fixa */
+:root{--nav-h:3.5rem}
+html{scroll-padding-top:calc(var(--nav-h) + env(safe-area-inset-top,0px))}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:100;padding-top:env(safe-area-inset-top,0px);background:transparent;border-bottom:1px solid transparent;transition:background-color .35s ease,border-color .35s ease,-webkit-backdrop-filter .35s ease,backdrop-filter .35s ease}
+.site-header.is-scrolled,.site-header.menu-open{background:color-mix(in srgb,var(--bg) 78%,transparent);-webkit-backdrop-filter:saturate(140%) blur(12px);backdrop-filter:saturate(140%) blur(12px);border-bottom-color:var(--line)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:var(--nav-h)}
 .logo{font-weight:800;text-decoration:none;font-size:1.15rem}
 nav ul{display:flex;gap:1.5rem;list-style:none;margin:0;padding:0}
-nav a{text-decoration:none;color:var(--mute);font-weight:600}
+nav a{text-decoration:none;color:var(--mute);font-weight:600;font-size:.95rem;transition:color .25s,box-shadow .25s}
 nav a:hover,nav a[aria-current]{color:var(--fg);box-shadow:0 2px 0 var(--acc)}
-.theme{display:flex;gap:.5rem}
-.theme button{width:1.5rem;height:1.5rem;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0}
-.theme button[aria-pressed="true"]{border-color:var(--fg)}
-.theme button[data-t="escuro"]{background:#1a1a1a;box-shadow:inset -.6rem 0 0 #ffc400}
-.theme button[data-t="claro"]{background:#fff;box-shadow:inset -.6rem 0 0 #b37a00}
+.nav-actions{display:flex;align-items:center;gap:.5rem}
+
+/* Seletor de tema: ☼ / ☾ */
+.theme-toggle{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;justify-items:center;width:3.4rem;height:1.8rem;padding:0;border:1px solid var(--line);border-radius:2rem;background:transparent;color:var(--mute);cursor:pointer}
+.theme-toggle::before{content:"";position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:2rem;background:var(--line);transform:translateX(100%);transition:transform .3s ease,background-color .35s ease}
+.t-ico{position:relative;width:.95rem;height:.95rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;opacity:.5;transition:opacity .3s,color .3s}
+.t-moon{opacity:1;color:var(--fg)}
+:root[data-theme="claro"] .theme-toggle::before{transform:none}
+:root[data-theme="claro"] .t-sun{opacity:1;color:var(--fg)}
+:root[data-theme="claro"] .t-moon{opacity:.5;color:inherit}
+
+/* Botão do menu (só aparece no mobile) */
+.menu-btn{display:none;position:relative;width:2.25rem;height:2.25rem;padding:0;border:0;background:transparent;color:var(--fg);cursor:pointer}
+.menu-btn span{position:absolute;left:.6rem;right:.6rem;height:2px;border-radius:2px;background:currentColor;transition:transform .25s ease,opacity .2s ease}
+.menu-btn span:nth-child(1){top:.8rem}.menu-btn span:nth-child(2){top:1.1rem}.menu-btn span:nth-child(3){top:1.4rem}
+.menu-open .menu-btn span:nth-child(1){transform:translateY(.3rem) rotate(45deg)}
+.menu-open .menu-btn span:nth-child(2){opacity:0}
+.menu-open .menu-btn span:nth-child(3){transform:translateY(-.3rem) rotate(-45deg)}
 .hero{padding:clamp(4rem,12vw,9rem) 0 4rem}
 .hello{color:var(--acc);font-weight:600;margin:0 0 1rem}
 h1{font-size:clamp(3.2rem,11vw,8rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin:0 0 2rem}
@@ -18,4 +35,6 @@ h1{font-size:clamp(3.2rem,11vw,8rem);line-height:.95;letter-spacing:-.04em;font-
 footer{border-top:1px solid var(--line);margin-top:3rem;padding:2.5rem 0 3rem;color:var(--mute)}
 footer .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(10rem,1fr));gap:2rem}
 footer strong{display:block;color:var(--fg);margin-bottom:.4rem}
-footer a{display:block}
+footer a{display:flex;align-items:center;gap:.5rem}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+.ico{width:1.15em;height:1.15em;flex:none;fill:currentColor}
