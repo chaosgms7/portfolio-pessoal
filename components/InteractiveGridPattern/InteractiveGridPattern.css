@@ -1,0 +1,37 @@
+/*
+ * Equivalente em CSS das classes Tailwind do componente original:
+ *  svg  : absolute inset-0 h-full w-full border border-gray-400/30
+ *  rect : stroke-gray-400/30, fill-transparent | fill-gray-300/30 (hover),
+ *         transition-all duration-100 ease-in-out, not-hover:duration-1000
+ * As cores usam as variáveis do tema do site (claro/escuro).
+ */
+.igp {
+  --igp-line: color-mix(in srgb, var(--mute, #9ca3af) 20%, transparent);
+  --igp-hover: color-mix(in srgb, var(--fg, #d1d5db) 14%, transparent);
+
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--igp-line);
+}
+
+.igp__square {
+  fill: transparent;
+  stroke: var(--igp-line);
+  transition: all 1000ms ease-in-out;
+}
+
+.igp__square:hover {
+  transition-duration: 100ms;
+}
+
+.igp__square--active {
+  fill: var(--igp-hover);
+}
+
+/* Tema claro: usa o cinza original do componente (gray-400 / 30%) para manter a grade discreta */
+:root[data-theme="claro"] .igp {
+  --igp-line: rgb(156 163 175 / 0.22);
+  --igp-hover: rgb(156 163 175 / 0.3);
+}

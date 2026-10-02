@@ -28,6 +28,8 @@ nav a:hover,nav a[aria-current]{color:var(--fg);box-shadow:0 2px 0 var(--acc)}
 .menu-open .menu-btn span:nth-child(2){opacity:0}
 .menu-open .menu-btn span:nth-child(3){transform:translateY(-.3rem) rotate(-45deg)}
 .hero{padding:clamp(4rem,12vw,9rem) 0 4rem}
+/* Fundo de pontos: fixo na página inteira, atrás de todas as seções */
+.page-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;-webkit-mask-image:radial-gradient(ellipse 95% 85% at 50% 40%,#000 35%,transparent 100%);mask-image:radial-gradient(ellipse 95% 85% at 50% 40%,#000 35%,transparent 100%)}
 .hello{color:var(--acc);font-weight:600;margin:0 0 1rem}
 h1{font-size:clamp(3.2rem,11vw,8rem);line-height:.95;letter-spacing:-.04em;font-weight:800;margin:0 0 2rem}
 .hero p{max-width:38rem;font-size:1.2rem;color:var(--mute);margin:0 0 1rem}

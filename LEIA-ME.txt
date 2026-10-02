@@ -22,7 +22,11 @@ Não abra o `index.html` com dois cliques: os módulos do React não carregam a 
     css/                                estilos (base, layout, components, responsive)
     js/theme.js                         troca de tema claro/escuro
     components/FlipCard/                Flip Card oficial do React Bits (não editado)
-    src/main.jsx                        monta os cards na seção Projetos
+    components/DotPattern/              DotPattern (fundo de pontos da página)
+    components/InteractiveGridPattern/  grade interativa (guardada, sem uso no momento)
+    src/main.jsx                        monta os cards de Projetos e o fundo da página
+    src/PageBackground.jsx              escolhe o fundo (DotPattern; opção glow disponível)
+    src/PageGrid.jsx                    fundo alternativo com a grade interativa (sem uso)
     src/ProjectFlipCards.jsx            dados dos projetos (troque os textos aqui)
     assets/images/                      imagens
     package.json, vite.config.js        configuração do projeto

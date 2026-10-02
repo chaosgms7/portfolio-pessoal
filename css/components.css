@@ -13,9 +13,12 @@
 .skills li{border:1px solid var(--line);padding:.35rem .9rem;border-radius:2rem;font-weight:600}
 .about-text{max-width:40rem;color:var(--mute)}
 .services{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:1.25rem}
-.service{background:var(--card);border:1px solid var(--line);border-radius:.75rem;padding:1.25rem;transition:border-color .3s}
+.service{background:var(--card);border:1px solid var(--line);border-radius:.75rem;padding:1.25rem;transition:transform .3s ease,box-shadow .3s ease,border-color .3s}
 .service:hover{border-color:var(--acc)}
-.service-icon{display:block;font-size:2rem;line-height:1;margin-bottom:.75rem}
+@media (hover:hover){.service:hover{transform:translateY(-8px);box-shadow:0 14px 28px -14px rgb(0 0 0/.45)}}
+.service-icon{display:grid;place-items:center;width:2.9rem;height:2.9rem;margin-bottom:1rem;border-radius:.8rem;border:1px solid color-mix(in srgb,var(--acc) 35%,transparent);background:color-mix(in srgb,var(--acc) 10%,transparent);color:var(--acc);transition:background-color .3s,border-color .3s}
+.service-icon svg{width:1.5rem;height:1.5rem;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.service:hover .service-icon{background:color-mix(in srgb,var(--acc) 20%,transparent);border-color:var(--acc)}
 .service h3{margin:0 0 .4rem;font-size:1.25rem}
 .service p{margin:0;color:var(--mute)}
 .flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1.5rem;justify-items:center}

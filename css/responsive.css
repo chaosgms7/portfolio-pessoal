@@ -6,5 +6,10 @@
 .site-header.menu-open nav{opacity:1;visibility:visible;transform:none;transition-delay:0s}
 .site-header nav ul{flex-direction:column;gap:0;max-width:62rem;margin:0 auto;padding:0 1.5rem}
 .site-header nav a{display:inline-block;padding:.65rem 0;font-size:1.05rem}
+
+/* "O que eu faço" no celular: faixa que desliza para o lado, com encaixe a cada card */
+.services{display:flex;gap:1rem;margin:-.75rem -1.5rem -1rem;padding:.75rem 1.5rem 1rem;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:1.5rem;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.services::-webkit-scrollbar{display:none}
+.service{flex:0 0 min(80%,18rem);scroll-snap-align:start}
 }
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}:root.theme-anim *,:root.theme-anim *::before,:root.theme-anim *::after{transition:none!important}}
+@media (prefers-reduced-motion:reduce){.service:hover{transform:none!important;box-shadow:none!important}*{transition:none!important;scroll-behavior:auto!important}:root.theme-anim *,:root.theme-anim *::before,:root.theme-anim *::after{transition:none!important}}
